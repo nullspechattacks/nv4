@@ -5,7 +5,7 @@ import requests
 with open("bot.txt", "r") as file:
     bot = file.readlines()
 
-send = -1
+send = 6299
 
 while True:
     send += 1
