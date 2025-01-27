@@ -17,8 +17,23 @@ while True:
 
     headers = {
         "userId": id,
+        "packageName": "blockymods",
+        "packageNameFull": "com.sandboxol.blockymods",
+        "androidVersion": "30",
+        "OS": "android",
+        "appType": "android",
+        "appLanguage": "en",
+        "appVersion": "5212",
+        "appVersionName": "2.104.2",
+        "channel": "sandbox",
+        "eventType": "app",
+        "userLanguage": "en_US",
+        "region": "RU",
+        "clientType: "client",
+        "env": "prd",
+        "package_name_en": "com.sandboxol.blockymods",
         "Access-Token": token,
-        "User-Agent": ""
+        "User-Agent": "okhttp/4.11.0"
     }
 
     data = {
