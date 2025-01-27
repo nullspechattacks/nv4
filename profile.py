@@ -1,4 +1,5 @@
 import random
+import uuid
 
 import requests
 
@@ -33,6 +34,8 @@ while True:
         "env": "prd",
         "package_name_en": "com.sandboxol.blockymods",
         "md5": "5d0de77b0f4b93b44669f146e54b49d9",
+        "X-ApiKey": "6aDtpIdzQdgGwrpP6HzuPA",
+        "X-Nonce": str(uuid.uuid4()),
         "Access-Token": token,
         "Content-Type": "application/json; charset=utf-8",
         "Host": "gw.sandboxol.com",
