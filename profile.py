@@ -11,7 +11,7 @@ send = -1
 while True:
     send += 1
     try:
-        id, token = bot[send].strip().split(":")
+        id, token, password, device, sign = bot[send].strip().split(":")
     except:
         send = -1
         continue
