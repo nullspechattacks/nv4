@@ -9,7 +9,11 @@ send = -1
 
 while True:
     send += 1
-    id, token = bot[send].strip().split(":")
+    try:
+        id, token = bot[send].strip().split(":")
+    except:
+        send = -1
+        continue
 
     headers = {
         "userId": id,
