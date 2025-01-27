@@ -32,7 +32,12 @@ while True:
         "clientType: "client",
         "env": "prd",
         "package_name_en": "com.sandboxol.blockymods",
+        "md5": "5d0de77b0f4b93b44669f146e54b49d9",
         "Access-Token": token,
+        "Content-Type": "application/json; charset=utf-8",
+        "Host": "gw.sandboxol.com",
+        "Connection": "Keep-Alive",
+        "Accept-Encoding": "gzip",
         "User-Agent": "okhttp/4.11.0"
     }
 
