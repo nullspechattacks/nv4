@@ -1,12 +1,3 @@
-import random
-import uuid
-
-import requests
-
-with open("bot.txt", "r") as file:
-    bot = file.readlines()
-
-send = -1
 
 while True:
     send += 1
